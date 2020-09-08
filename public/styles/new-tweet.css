@@ -1,0 +1,89 @@
+.new-tweet button {
+  background: #4056A1;
+  color: white;
+  font-family: "Bungee", sans-serif;
+  padding: 10px;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
+} 
+
+#tweet-text {
+  border-bottom: solid black 5px;
+  width: 90%;
+  margin-left: 5%;
+  background: #f4f1ec;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+}
+
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+  padding: 20px 0;
+}
+
+.new-tweet label {
+  margin-left: 5%;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+
+/* new */
+
+/* #container {
+  margin-top: 50px;
+} */
+
+#tweet article {
+  margin-top: 50px;
+  border: solid black 5px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+#tweet article:hover {
+  box-shadow: 10px 10px #888888;
+}
+
+#tweet header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#tweet header span {
+  margin-left: auto;
+}
+
+#tweet article hr {
+  background: black;
+  top: 20px;
+  border: none;
+  height: 5px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+#tweet img {
+  width: 10%;
+}
+
+#tweet footer img {
+  width: 50px;
+  color: red;
+}
+
+#tweet footer {
+  display: flex;
+  align-items: center;
+}
+
+#tweet footer span {
+  margin-left: auto;
+}
