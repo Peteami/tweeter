@@ -10,3 +10,13 @@ nav span {
   /* color: pink; */
   font-family: "Bungee", sans-serif;
 }
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-box {
+  height: 120px;
+}
