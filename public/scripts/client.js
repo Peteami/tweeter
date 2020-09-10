@@ -1,27 +1,35 @@
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+// const tweetData = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ]
+
+
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 
@@ -33,7 +41,7 @@ const createTweetElement = function(tweetObj) {
     ${tweetObj.user.name}
     <span>${tweetObj.user.handle}</span>
   </header>
-  ${tweetObj.content.text}
+  <div>${escape(tweetObj.content.text)}</div>
   <hr>
   <footer>
   ${moment(new Date(tweetObj.created_at), "YYYYMMDD").fromNow()}
@@ -45,32 +53,67 @@ const createTweetElement = function(tweetObj) {
   </footer>
   </article>
     `;
-    return renderTweet;
-}
+  return renderTweet;
+};
 
 
 const renderTweets = (results) => {
   for (let result of results) {
-    $('#tweet').append(createTweetElement(result));
+    $('#tweet').prepend(createTweetElement(result));
   }
-}
+};
+
+
+const loadTweets = function() {
+  $.ajax("/tweets", { method: "GET",
+    success: function(response) {
+      renderTweets(response);
+    }
+  });
+};
+
+
+
+
 
 $(document).ready( () => {
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
+  loadTweets();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
     const data = $(this).serialize();
-    console.log(data);
+    
+    if(!data.slice(5)) {
+      // return alert("The tweet box is empty!");
+      $("#alert-Box").css("display", "inherit");
+      return $(".error-message").text("The tweet box is empty!");
+
+
+    } else if (data.slice(5).length > 140) {
+      // return alert("Your tweet is longer than 140 characters!");
+      $("#alert-Box").css("display", "inherit");
+      return $(".error-message").text("Your tweet is longer than 140 characters!");
+    }
+    // console.log(data.slice(5));
+    // console.log(data);
   
-  $.ajax("/tweets", {
-    method: "POST",
-    data,
-  
-  })
-})
-  
-  })
+    $.ajax("/tweets", {
+      method: "POST",
+      data,
+      success: function(response) {
+        $.ajax("/tweets", { method: "GET",
+          success: function(response) {
+            $('#tweet').prepend(createTweetElement(response[response.length - 1]));
+            $(".counter").text(140);
+            $("#tweet-text").val("");
+            $("#alert-Box").css("display", "none");
+          }
+        });
+      }
+    });
+  });
+});
   
 
 
