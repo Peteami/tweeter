@@ -9,5 +9,5 @@ $(() => {
       $(".counter").css("color", "black");
     }
     $(".counter").text(actualCount);
-  })
+  });
 });

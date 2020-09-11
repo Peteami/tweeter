@@ -9,14 +9,77 @@ nav {
 nav span {
   /* color: pink; */
   font-family: "Bungee", sans-serif;
+  font-size: 1.2em;
 }
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-box {
   height: 120px;
+}
+
+.nav-box .link {
+  margin-left: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .8em;
+}
+
+.bold-link {
+  margin-left: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+.nav-box i {
+  color: red;
+}
+
+.right-nav {
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#up-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  display: none;
+  border: none;
+  background: transparent;
+}
+
+#up-button:hover {
+  cursor: pointer;
+}
+
+#up-button i {
+  color: red;
+}
+
+.down i:hover {
+  animation: moveUpDown 0.5s linear infinite;
+  cursor: pointer;
+}
+
+.link {
+  cursor: pointer;
+}
+
+@keyframes moveUpDown {
+  0% {
+    bottom: 0px;
+  }
+  25% {
+    bottom: 1px
+  }
+  50% {
+    bottom: 2px;
+  }
 }

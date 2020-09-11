@@ -1,4 +1,4 @@
-.new-tweet button {
+#new-tweet button {
   background: #4056A1;
   color: white;
   font-family: "Bungee", sans-serif;
@@ -20,7 +20,7 @@
   border-bottom-style: groove;
 }
 
-.new-tweet div {
+#new-tweet div {
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -28,7 +28,7 @@
   padding: 20px 0;
 }
 
-.new-tweet label {
+#new-tweet label {
   margin-left: 5%;
   font-size: 40px;
   font-weight: 700;
@@ -37,31 +37,40 @@
 
 /* new */
 
-/* #container {
-  margin-top: 50px;
-} */
 
-#tweet article {
+.icons-render {
+  display: none;
+}
+
+article:hover .icons-render{
+  display: inline;
+}
+
+#render-tweet article {
   margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
   border: solid black 5px;
   padding: 20px;
   margin-bottom: 50px;
 }
-#tweet article:hover {
+#render-tweet article:hover {
   box-shadow: 10px 10px #888888;
+  font-weight: bold;
 }
 
-#tweet header {
+#render-tweet header {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
 }
 
-#tweet header span {
+#render-tweet header span {
   margin-left: auto;
 }
 
-#tweet article hr {
+#render-tweet article hr {
   background: black;
   top: 20px;
   border: none;
@@ -70,21 +79,20 @@
   margin-top: 40px;
 }
 
-#tweet img {
+#render-tweet img {
   width: 10%;
 }
 
-#tweet footer img {
-  width: 50px;
-  color: red;
+#render-tweet footer img {
+  width: 30px;
 }
 
-#tweet footer {
+#render-tweet footer {
   display: flex;
   align-items: center;
 }
 
-#tweet footer span {
+#render-tweet footer span {
   margin-left: auto;
 }
 
@@ -93,7 +101,7 @@
   border: solid red 5px;
   border-radius: 15px;
   color: red;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 30px;
   display:none;
@@ -106,4 +114,13 @@
 
 #alert-Box img {
   width: 10%;
+}
+
+
+.handle {
+  display: none;
+}
+
+article:hover .handle {
+  display: inline;
 }

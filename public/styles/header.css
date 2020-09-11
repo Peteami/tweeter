@@ -5,10 +5,59 @@ The background should be a different colour than the nav and the body
 The background-image should be a transparent pattern. Feel free to use this tool to assist: https://www.transparenttextures.com/ */
 
 header.title{
-  height: 400px;
+  height: 450px;
   width: 100%;
   text-align: center;
   background: orange;
   background-image: url("/images/asfalt-light.png");
+  padding-top: 50px;
+  color: white;
+  font-weight: lighter;
 }
 
+
+header.title h2 {
+  font-weight: 100;
+  margin-top: 0;
+}
+
+
+header.title h2 span {
+  font-weight: bold;
+}
+
+.tablet-top {
+  display: inline;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.logo {
+  font-family: "Bungee", sans-serif;
+  font-size: 1.2em;
+}
+
+.logo-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+.btn-tablet {
+  background-color: orange;
+  border: none;
+  color: white;
+}
+
+.btn-tablet:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .tablet-top {
+    display: none;
+  }
+
+}

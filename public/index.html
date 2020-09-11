@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- Fonts Google -->
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet"
-		/>
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet"/>
 
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -32,36 +34,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
 
   </head>
-
   <body>
-<!-- ------------------------------------Top nav bar (fixed)----------------------------------------- -->
+
+    <div id="main-container">
+     
+<!-- ----------------------------------------------Nav Bar--------------------------------------------------- -->
     <div class="nav-box">
       <nav>
         <span>tweeter</span>
+        <div class="right-nav">
+        <span class="link"> <span class="bold-link">Write</span> a new tweet</span>
+        <a class="down"><i class="fas fa-chevron-circle-down"></i></a>
+        </div>
       </nav>
     </div>
 
-<!-- -------------------------------------------Welcome Header--------------------------------------------- -->
+
+
+      <div id="left-container">
+<!-- ----------------------------------------------------Header--------------------------------------------- -->
     <header class="title">
+      <div class="tablet-top">
+        <span class="logo">Tweeter</span>
+        <span class="logo-button"><button class="btn-tablet"><span class="bold-link">Write</span> a new tweet</span></button>
+        <!-- <a class="down"><i class="fas fa-chevron-circle-down"></i></a> -->
+      </div>
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2><span>Pierre</span>  Dinelle</h2>
       </div>
   </header>
+<!-- ------------------------------------------------------------------------------------------------------- -->
 
 
-<!--------------------------------------------- Main Container------------------------------------------------>
-    <main class="container"> 
-      <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-      commodo consequat. -->
 
 
-<!-- --------------------------------------------Error Messages----------------------------------------------- -->
+    <main class="container">
+<!-- --------------------------------------------Alert Box----------------------------------------------------- -->
       <section id="alert-Box">
         <div>
           <img src="/images/warning-triangle.png">
@@ -69,14 +81,14 @@
           <img src="/images/warning-triangle.png">
         </div>
       </section>
+      </div>
 
 
 
-  <!-- -------------------------------------Create Tweet Section---------------------------------------------- -->
-      <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
+      <div id="right-container">
+  <!-- --------------------------------------------New Tweet---------------------------------------------------- -->
+      <section id="new-tweet">
         <form id="tweet-form">
-          <!-- method="POST" action="/tweets" -->
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -86,26 +98,13 @@
         </form>
       </section>
 
-  <!-- --------------------------------Render Tweet From Database------------------------------------------ -->
-      <section id="tweet">
-        <!-- <article>
-          <header>
-            <img src="/images/profile-hex.png"> 
-            Your Name
-            <span>@whatever</span>
-          </header>
-            This is a test for a tweet!
-            <hr>
-          <footer>
-            date
-            <span>
-              <img src="/images/flag.png"> 
-              <img src="/images/retweet-arrows.png"> 
-              <img src="/images/love.png"> 
-            </span>
-          </footer>
-        </article> -->
+
+
+  <!-- -----------------------------------------------Render Tweet---------------------------------------------- -->
+      <section id="render-tweet">
       </section>
+
+      <button id="up-button"><i class="fas fa-chevron-circle-up fa-3x"></i></button>
     </main>
   </body>
 </html>

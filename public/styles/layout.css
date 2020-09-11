@@ -10,9 +10,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
@@ -21,13 +18,36 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
- main {
-   width: 90%;
-   margin: auto;
-   padding-top: 50px;
- }
+main {
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+}
 
+.nav-box {
+  display: none;
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+  #main-container {
+    display:flex;
+    padding-top: 250px;
+  }
+
+  #left-container {
+    width: 45%;
+    padding-left: 50px;
+    padding-right: 150px;
+  }
+
+  #righ-container {
+    width: 55%;
+  }
+    
+  .nav-box {
+    display: inline;
+  }
+}
